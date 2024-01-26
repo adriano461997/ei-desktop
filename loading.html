@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa de Instituições</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #container {
+            text-align: center;
+        }
+
+        #results {
+            list-style: none;
+            padding: 0;
+        }
+
+        .institution {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+
+        img {
+            max-width: 100px;
+            max-height: 100px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #58BA47;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        button:hover {
+            background-color: #58BA47;
+        }
+
+
+        .loader {
+            width: 48px;
+            height: 48px;
+            border: 5px solid #083657;
+            border-bottom-color: transparent;
+            border-radius: 50%;
+            display: inline-block;
+            box-sizing: border-box;
+            animation: rotation 1s linear infinite;
+        }
+
+        @keyframes rotation {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <img style="width:100px; height: 100px;" src="./imagens/logo2.png" />
+    <h1>EI DESKTOP</h1>
+    <div class="loader"></div>
+    <br /><br />
+    <span style="font-size: 18px; font-weight: bold;">Powered by HongaYetu</span>
+</div>
+
+</body>
+</html>

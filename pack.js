@@ -1,5 +1,7 @@
 const packager = require('electron-packager');
 
+// Ta bom
+
 var options = {
     'arch': 'ia32',
     'platform': 'win32',
@@ -22,6 +24,7 @@ var options = {
         'InternalName': 'TierraDesktop'
     }
 };
+
 packager(options, function done_callback(err, appPaths) {
     console.log(err);
     console.log(appPaths);

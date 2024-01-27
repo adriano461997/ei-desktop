@@ -1,18 +1,17 @@
 import { app, BrowserWindow, ipcMain, dialog, Menu, shell } from 'electron';
 import path from 'path';
 import {updateElectronApp, UpdateSourceType} from "update-electron-app"
-updateElectronApp()
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const Store = require('electron-store');
-const store = new Store();
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
   app.quit();
 }
 
+updateElectronApp()
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const Store = require('electron-store');
+const store = new Store();
 
 const createWindow = () => {
   // Create the browser window.

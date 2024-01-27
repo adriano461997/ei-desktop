@@ -1,44 +1,22 @@
 {
+  "version": "1.0.0",
+  "description": "Aplicativo de sistema de gestão da Escola Inteligente",
   "build": {
     "copyright": "Copyright Escola Inteligente 2023-2024 todos os direitos reservados",
     "appId": "com.hongayetu.eidesktop",
     "productName": "EI DESKTOP",
-    "buildVersion": "1.0.5",
-    "mac": {
-      "icon": "./imagens/logo.ico",
-      "category": "public.app-category.utilities"
-    },
-    "dmg": {
-      "title": "${productName} ${version}"
-    },
-    "win": {
-      "icon": "./imagens/logo.ico",
-      "target": [
-        "msi"
-      ]
-    },
-    "linux": {
-      "target": [
-        "AppImage",
-        "deb"
-      ]
-    }
+    "buildVersion": "1.0.0"
   },
   "repository": "https://github.com/adriano461997/ei-desktop",
   "name": "ei-desktop",
   "productName": "EI DESKTOP",
-  "version": "1.0.5",
-  "description": "My Electron application description",
   "main": ".vite/build/main.js",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "lint": "eslint --ext .ts,.tsx .",
-    "build": "electron-builder",
-    "pack:osx": "electron-packager . EI DESKTOP --out=dist/osx --platform=darwin --arch=x64 --icon=assets/build/osx/icon.icns && npm run codesign",
-    "pack:win64": "electron-packager . EI DESKTOP --out=dist/win --platform=win32 --arch=x64 app-version=1.0 --icon=imagens/logo.ico --build-version='0001' --app-copyright='Copyright Escola Inteligente 2023-2024'"
+    "lint": "eslint --ext .ts,.tsx ."
   },
   "keywords": [],
   "author": {

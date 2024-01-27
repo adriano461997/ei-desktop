@@ -130,7 +130,6 @@ const startApp = ()=>{
           center: true,
         });
 
-        windowSobre.setTitle("Algo")
         windowSobre.setMenu(null);
         windowSobre.loadFile("sobre.html");
       }

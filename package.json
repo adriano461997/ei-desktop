@@ -3,7 +3,7 @@
     "copyright": "Copyright Escola Inteligente 2023-2024 todos os direitos reservados",
     "appId": "com.hongayetu.eidesktop",
     "productName": "EI DESKTOP",
-    "buildVersion": "1.0.4",
+    "buildVersion": "1.0.5",
     "mac": {
       "icon": "./imagens/logo.ico",
       "category": "public.app-category.utilities"

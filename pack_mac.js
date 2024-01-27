@@ -4,12 +4,12 @@ const packager = require('@electron/packager');
 
 var options = {
     'arch': 'x64',
-    'platform': 'win32',
-    'dir': './',
+    'platform': 'darwin',
+    'dir': './logo.icns',
     'appCopyright': 'copyright 2014-2024 Honga Yetu Softwares',
     'appVersion': '1.0',
     'asar': true,
-    'icon': './imagens/logo.ico',
+    'icon': './logo.icns',
     'name': 'EI DESKTOP',
     'ignore': ['./releases', './.git'],
     'out': './releases',

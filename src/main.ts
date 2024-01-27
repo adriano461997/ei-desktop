@@ -1,5 +1,7 @@
 import { app, BrowserWindow, ipcMain, dialog, Menu, shell } from 'electron';
 import path from 'path';
+import {updateElectronApp, UpdateSourceType} from "update-electron-app"
+updateElectronApp()
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const Store = require('electron-store');
@@ -10,6 +12,8 @@ if (require('electron-squirrel-startup')) {
   app.quit();
 }
 
+
+
 const createWindow = () => {
   // Create the browser window.
   new BrowserWindow({
@@ -18,7 +22,8 @@ const createWindow = () => {
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
-    show: false
+    show: false,
+    center: true,
   });
 
   let mainWindowWa: BrowserWindow = null;
@@ -38,6 +43,7 @@ const createWindow = () => {
       },
       resizable: false,
       show: false,
+      center: true,
     });
 
     mainWindowWa.maximize();
@@ -82,7 +88,8 @@ const startApp = ()=>{
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
-    show: false
+    show: false,
+    center: true,
   });
 
   const menu = Menu.buildFromTemplate([
@@ -141,6 +148,7 @@ const startApp = ()=>{
     resizable: false,
     transparent: true,
     frame: false,
+    center: true,
   })
 
   loadingWindow.loadFile('loading.html')

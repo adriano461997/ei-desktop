@@ -4,11 +4,45 @@ import { MakerZIP } from '@electron-forge/maker-zip';
 import { MakerDeb } from '@electron-forge/maker-deb';
 import { MakerRpm } from '@electron-forge/maker-rpm';
 import { VitePlugin } from '@electron-forge/plugin-vite';
+import AutoUnpackNativesPlugin from "@electron-forge/plugin-auto-unpack-natives";
+import MakerDMG from "@electron-forge/maker-dmg";
 
 const config: ForgeConfig = {
-  packagerConfig: {},
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: 'adriano461997',
+          name: 'ei-desktop'
+        },
+      }
+    }
+  ],
+  packagerConfig: {
+    icon: 'imagens/logo', // no file extension required,
+    asar: true // or an object containing your asar options
+  },
+    // ...
+
   rebuildConfig: {},
-  makers: [new MakerSquirrel({}), new MakerZIP({}, ['darwin']), new MakerRpm({}), new MakerDeb({})],
+
+  makers: [
+   new MakerSquirrel({
+    setupIcon: "imagens/logo.ico",
+    copyright: "copyright Escola Inteligente 2023-2024",
+    authors: "Honga Yetu",
+    name: "EI-DESKTOP",
+  }),
+  new MakerZIP({}, ['darwin']),
+  new MakerRpm({}),
+  new MakerDeb({}),
+  new MakerDMG({
+    icon: "imagens/logo.png",
+    name: "EI DESKTOP"
+  })
+  ],
+
   plugins: [
     new VitePlugin({
       // `build` can specify multiple entry builds, which can be Main process, Preload scripts, Worker process, etc.
@@ -31,6 +65,9 @@ const config: ForgeConfig = {
         },
       ],
     }),
+    new AutoUnpackNativesPlugin({
+
+    })
   ],
 };
 

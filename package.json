@@ -1,19 +1,30 @@
 {
-  "copyright": "Copyright © 2019 ${author}",
   "build": {
+    "copyright": "Copyright Escola Inteligente 2023-2024 todos os direitos reservados",
     "appId": "com.hongayetu.eidesktop",
     "productName": "EI DESKTOP",
-    "copyright": "Copyright 2023-2024 todos os direitos reservados",
-    "buildVersion": "1.0.0",
+    "buildVersion": "1.0.4",
     "mac": {
       "icon": "./imagens/logo.ico",
       "category": "public.app-category.utilities"
     },
+    "dmg": {
+      "title": "${productName} ${version}"
+    },
     "win": {
       "icon": "./imagens/logo.ico",
-      "copyright": "Copyright 2023-2024 todos os direitos reservados"
+      "target": [
+        "msi"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
     }
   },
+  "repository": "https://github.com/adriano461997/ei-desktop",
   "name": "ei-desktop",
   "productName": "EI DESKTOP",
   "version": "1.0.0",
@@ -25,6 +36,7 @@
     "make": "electron-forge make",
     "publish": "electron-forge publish",
     "lint": "eslint --ext .ts,.tsx .",
+    "build": "electron-builder",
     "pack:osx": "electron-packager . EI DESKTOP --out=dist/osx --platform=darwin --arch=x64 --icon=assets/build/osx/icon.icns && npm run codesign",
     "pack:win64": "electron-packager . EI DESKTOP --out=dist/win --platform=win32 --arch=x64 app-version=1.0 --icon=imagens/logo.ico --build-version='0001' --app-copyright='Copyright Escola Inteligente 2023-2024'"
   },
@@ -37,12 +49,13 @@
   "devDependencies": {
     "@electron-forge/cli": "^7.2.0",
     "@electron-forge/maker-deb": "^7.2.0",
+    "@electron-forge/maker-dmg": "^7.2.0",
     "@electron-forge/maker-rpm": "^7.2.0",
     "@electron-forge/maker-squirrel": "^7.2.0",
     "@electron-forge/maker-zip": "^7.2.0",
     "@electron-forge/plugin-auto-unpack-natives": "^7.2.0",
     "@electron-forge/plugin-vite": "^7.2.0",
-    "@electron/packager": "^18.1.3",
+    "@electron-forge/publisher-github": "^7.2.0",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
     "electron": "28.1.3",
@@ -52,7 +65,10 @@
     "typescript": "~4.5.4"
   },
   "dependencies": {
+    "electron-log": "^5.1.0",
+    "electron-packager": "^17.1.2",
     "electron-squirrel-startup": "^1.0.0",
-    "electron-store": "^8.1.0"
+    "electron-store": "^8.1.0",
+    "update-electron-app": "^3.0.0"
   }
 }

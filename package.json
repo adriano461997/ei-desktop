@@ -27,7 +27,7 @@
   "repository": "https://github.com/adriano461997/ei-desktop",
   "name": "ei-desktop",
   "productName": "EI DESKTOP",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "My Electron application description",
   "main": ".vite/build/main.js",
   "scripts": {

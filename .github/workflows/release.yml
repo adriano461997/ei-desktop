@@ -16,6 +16,10 @@ jobs:
           ]
 
     runs-on: ${{ matrix.os.image }}
+    permissions:
+      contents: write
+      pull-requests: write
+      repository-projects: write
 
     steps:
       - name: Github checkout
